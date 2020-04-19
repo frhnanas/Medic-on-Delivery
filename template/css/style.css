@@ -1,0 +1,31 @@
+body{
+	min-height: 100vh;
+	background: #eee;
+}
+form{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: white;
+	border-radius: 5px;
+	padding: 30px;
+	text-align: center;
+	width: 512px;
+}
+main{
+	min-height: 100vh;
+	position: relative;
+}
+main .profile-info{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 1024px;
+	text-align: center;
+}
+main .profile-info figure{
+	max-width: 512px;
+	margin: auto;
+}
