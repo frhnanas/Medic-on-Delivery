@@ -29,17 +29,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
+          </ul>
+          <ul class="navbar-nav nav justify-content-end ">
             <li class="nav-item active">
-              <a class="nav-link" href="<?= site_url('user/go_login') ?>">Login</a>
+              <a class="nav-link" href="#"> hello, <?= $this->session->userdata('username'); ?> </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="<?= site_url('user/go_register') ?>">Register</a>
+              <a class="nav-link" href="<?= site_url('user') ?>">Logout</a>
             </li>
           </ul>
         </div>
       </nav>
     </header>
-
+    
     <main role="main">
 
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -90,40 +92,29 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </a>
       </div>
 
-
-      <!-- Marketing messaging and featurettes
-      ================================================== -->
-      <!-- Wrap the rest of the page in another container to center all the content. -->
-
       <div class="container marketing">
-
-        <!-- Three columns of text below the carousel -->
         <div class="row">
           <div class="col-lg-4">
             <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
             <h2>Edit Profile</h2>
             <p>Want to change something in your profile?</p>
             <p><a class="btn btn-secondary" href="#" role="button">Go to profile &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
+          </div>
           <div class="col-lg-4">
             <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
             <h2>Order medicine</h2>
             <p>Want to order some medicine to cure your disease?</p>
             <p><a class="btn btn-secondary" href="#" role="button">Order &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
+          </div>
           <div class="col-lg-4">
             <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
             <h2>History of order</h2>
             <p>Want to check all your past transactions?</p>
             <p><a class="btn btn-secondary" href="#" role="button">View history &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-
-
-        <!-- START THE FEATURETTES -->
+          </div>
+        </div>
 
         <hr class="featurette-divider">
-
         <div class="row featurette">
           <div class="col-md-7">
             <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
@@ -157,15 +148,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
           </div>
         </div>
-
+        
         <hr class="featurette-divider">
+      </div>
 
-        <!-- /END THE FEATURETTES -->
-
-      </div><!-- /.container -->
-
-
-      <!-- FOOTER -->
       <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
         <p>&copy; 2020 MoD, f.</p>

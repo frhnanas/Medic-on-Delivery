@@ -8,7 +8,7 @@
 	</head>
 	
 	<body>
-		<form action="<?= site_url('register/register') ?>" method="post" enctype="multipart/form-data">
+		<form action="<?= site_url('user/register') ?>" method="post" enctype="multipart/form-data">
 			<h2>Register</h2>
 			<?php if(isset($error_message)) { ?>
 			<div class="alert alert-danger" role="alert">
@@ -24,8 +24,12 @@
 			<div class="form-group">
 				<input type="password" class="form-control" name="re-password" placeholder="Re-Enter Password" required>
 			</div>
+			<div class="form-group">
+				<label for="alamat">Alamat : </label>
+				<textarea name="alamat" id="alamat" cols="30" rows="10"></textarea>
+			</div>
 			<button type="submit" class="btn btn-primary">Register</button>
-			<p>Already have an account? Login <a href="<?= site_url('login/index') ?>">here</a></p>
+			<p>Already have an account? Login <a href="<?= site_url('user/go_login') ?>">here</a></p>
 			<a href="<?= base_url() ?>">Home</a>
 		</form>
 		<script src="<?php echo base_url('assets/jquery-3.2.1.min.js'); ?>"></script>
