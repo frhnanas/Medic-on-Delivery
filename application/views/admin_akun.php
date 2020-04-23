@@ -45,13 +45,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">Data Akun</a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="<?= site_url('admin/check_medicine') ?>">Check Medicine <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= site_url('admin/readobat') ?>">Data Obat</a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="<?= site_url('admin/check_transaction') ?>">Check Transaction <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= site_url('admin/readtransaksi') ?>">Data Transaksi</a>
             </li>
           </ul>
           <ul class="navbar-nav nav justify-content-end ">
@@ -87,7 +87,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <td><?php echo $d->username ?></td>
               <td><?php echo $d->alamat ?></td>
 
-              <td><a type="button" class="btn btn-danger"  href="<?= site_url('admin/hapusakun/') . $d->user_id; ?>" onClick="return confirm('Apakah Anda Yakin?')" ><i class="fas fa-user-times"></i>Delete</a></td>
+              <td><a type="button" class="btn btn-danger"  href="<?= site_url('admin/deleteakun/') . $d->akun_id; ?>" onClick="return confirm('Apakah Anda Yakin?')" ><i class="fas fa-user-times"></i>Delete</a></td>
             </form>
           </tr>
           <?php } ?>

@@ -9,39 +9,18 @@ class admin extends CI_Controller {
         $this->load->model('obat');
         $this->load->model('transaksi');
 	}
-	
-	public function index()
-	{
-		$this->load->view('home');
-	}
     
-    public function check_account(){
-        $data['data'] = $this->akun->show_all_akun()->result();
-        $this->load->view('check_account', $data);
+    public function readakun(){
+        $data['data'] = $this->akun->read_akun()->result();
+        $this->load->view('admin_akun', $data);
     }
 
-    public function check_medicine(){
-        $data['data'] = $this->obat->show_all_obat()->result();
-        $this->load->view('check_medicine', $data);
-    }
-
-    public function check_transaction(){
-        $data['data'] = $this->transaksi->show_all_transaksi()->result();
-        $this->load->view('check_transaction', $data);
-    }
-
-    public function hapusakun($user_id) {
-		$this->akun->hapus_akun($user_id);
-		redirect('admin/check_account');
+    public function deleteakun($akun_id) {
+		$this->akun->delete_akun($akun_id);
+		redirect('admin/readakun');
 	}
 
-	public function hapusobat($obat_id) {
-		$this->obat->hapus_obat($obat_id);
-		redirect('admin/check_medicine');
-	}
-
-
-	public function tambahobat() {
+    public function createobat() {
 		$input_data = [
             'obat_id' => $this->input->post('obat_id', true),
 			'nama_obat' => $this->input->post('nama_obat', true),
@@ -50,11 +29,17 @@ class admin extends CI_Controller {
 			'status_obat' => $this->input->post('status_obat', true),
         ];
         
-		$this->obat->tambah_obat($input_data);
-		redirect('admin/check_medicine');
+		$this->obat->create_obat($input_data);
+		redirect('admin/readobat');
 	}
 
-	public function editobat() {
+    
+    public function readobat(){
+        $data['data'] = $this->obat->read_obat()->result();
+        $this->load->view('admin_obat', $data);
+    }
+
+    public function updateobat() {
 		$data = [
             'obat_id' => $this->input->post('obat_id', true),
             'nama_obat' => $this->input->post('nama_obat', true),
@@ -64,16 +49,22 @@ class admin extends CI_Controller {
 		];
 
 		$obat_id = $this->input->post('obat_id', true);
-		$this->obat->edit_obat($obat_id, $data);
-		redirect('admin/check_medicine');
+		$this->obat->update_obat($obat_id, $data);
+		redirect('admin/readobat');
     }
+
+	public function deleteobat($obat_id) {
+		$this->obat->delete_obat($obat_id);
+		redirect('admin/readobat');
+	}
     
-    public function hapustransaksi($transaksi_id) {
-		$this->transaksi->hapus_transaksi($transaksi_id);
-		redirect('admin/check_transaction');
+    public function readtransaksi(){
+        $data['data'] = $this->transaksi->read_transaksi()->result();
+        $this->load->view('admin_transaksi', $data);
     }
-    
-    public function edittransaksi() {
+
+
+    public function updatetransaksi() {
 		$data = [
             'transaksi_id' => $this->input->post('transaksi_id', true),
             'nama_pemesan' => $this->input->post('nama_pemesan', true),
@@ -83,8 +74,14 @@ class admin extends CI_Controller {
 		];
 
 		$transaksi_id = $this->input->post('transaksi_id', true);
-		$this->transaksi->edit_transaksi($transaksi_id, $data);
-		redirect('admin/check_transaction');
+		$this->transaksi->update_transaksi($transaksi_id, $data);
+		redirect('admin/readtransaksi');
+    }
+
+        
+    public function deletetransaksi($transaksi_id) {
+		$this->transaksi->delete_transaksi($transaksi_id);
+		redirect('admin/readtransaksi');
     }
 
 }

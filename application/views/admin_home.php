@@ -49,19 +49,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
             <h2>Check User Account</h2>
             <p>aaaaa</p>
-            <p><a class="btn btn-secondary" href="<?= site_url('admin/check_account') ?>">aaaaa &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="<?= site_url('admin/readakun') ?>">aaaaa &raquo;</a></p>
           </div>
           <div class="col-lg-4">
             <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
             <h2>Check Medicine List</h2>
             <p>aaaaa</p>
-            <p><a class="btn btn-secondary" href="<?= site_url('admin/check_medicine') ?>" role="button">aaaaa &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="<?= site_url('admin/readobat') ?>" role="button">aaaaa &raquo;</a></p>
           </div>
           <div class="col-lg-4">
             <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
             <h2>Check Transaction List</h2>
             <p>aaaaa</p>
-            <p><a class="btn btn-secondary" href="<?= site_url('admin/check_transaction') ?>" role="button">aaaaa &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="<?= site_url('admin/readtransaksi') ?>" role="button">aaaaa &raquo;</a></p>
           </div>
         </div>
 

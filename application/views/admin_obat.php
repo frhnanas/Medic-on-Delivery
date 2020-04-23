@@ -44,14 +44,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= site_url('admin/readakun') ?>">Data Akun</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="<?= site_url('admin/check_account') ?>">Check Account <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">Data Obat</a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="<?= site_url('admin/check_transaction') ?>">Check Transaction <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= site_url('admin/readtransaksi') ?>">Data Transaksi</a>
             </li>
           </ul>
           <ul class="navbar-nav nav justify-content-end ">
@@ -94,7 +94,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <td><?php echo $d->status_obat ?></td>
 
               <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?php echo $d->obat_id ?>"><i class="fas fa-user-edit"></i>Edit</button></td>
-              <td><a type="button" class="btn btn-danger"  href="<?= site_url('admin/hapusobat/') . $d->obat_id; ?>" onClick="return confirm('Apakah Anda Yakin?')" ><i class="fas fa-user-times"></i>Delete</a></td>
+              <td><a type="button" class="btn btn-danger"  href="<?= site_url('admin/deleteobat/') . $d->obat_id; ?>" onClick="return confirm('Apakah Anda Yakin?')" ><i class="fas fa-user-times"></i>Delete</a></td>
             </form>
           </tr>
           <?php } ?>
@@ -112,7 +112,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <center><h2>Edit Data Obat </h2></center>
         </div>
         <div class="modal-body">
-        <form method="post" action= "<?= site_url('admin/editobat'); ?>">
+        <form method="post" action= "<?= site_url('admin/updateobat'); ?>">
         <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="Obat ID" name="obat_id" value="<?php echo $d->obat_id ?>"  required>
           <div class="form-group">
             <label for="formGroupExampleInput">Nama Obat</label>
@@ -152,7 +152,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <center><h2>Tambah Data Obat</h2></center>
       </div>
       <div class="modal-body">
-      <form method="POST" action="<?= site_url('admin/tambahobat'); ?>">
+      <form method="POST" action="<?= site_url('admin/createobat'); ?>">
         <div class="form-group">
           <label for="formGroupExampleInput">Nama Obat</label>
           <input type="text" class="form-control" id="formGroupExampleInput1" placeholder="Nama Obat" name="nama_obat" required >
