@@ -21,15 +21,15 @@ class admin extends CI_Controller {
 	}
 
     public function createobat() {
-		$input_data = [
-            'obat_id' => $this->input->post('obat_id', true),
-			'nama_obat' => $this->input->post('nama_obat', true),
-			'jenis' => $this->input->post('jenis', true),
-			'harga' => $this->input->post('harga', true),
-			'status_obat' => $this->input->post('status_obat', true),
+		$input_obat = [
+            'obat_id' => $this->input->post('obat_id'),
+			'nama_obat' => $this->input->post('nama_obat'),
+			'jenis' => $this->input->post('jenis'),
+			'harga' => $this->input->post('harga'),
+			'status_obat' => $this->input->post('status_obat'),
         ];
         
-		$this->obat->create_obat($input_data);
+		$this->obat->create_obat($input_obat);
 		redirect('admin/readobat');
 	}
 
@@ -41,14 +41,14 @@ class admin extends CI_Controller {
 
     public function updateobat() {
 		$data = [
-            'obat_id' => $this->input->post('obat_id', true),
-            'nama_obat' => $this->input->post('nama_obat', true),
-			'jenis' => $this->input->post('jenis', true),
-			'harga' => $this->input->post('harga', true),
-			'status_obat' => $this->input->post('status_obat', true),
+            'obat_id' => $this->input->post('obat_id'),
+            'nama_obat' => $this->input->post('nama_obat'),
+			'jenis' => $this->input->post('jenis'),
+			'harga' => $this->input->post('harga'),
+			'status_obat' => $this->input->post('status_obat'),
 		];
 
-		$obat_id = $this->input->post('obat_id', true);
+		$obat_id = $this->input->post('obat_id');
 		$this->obat->update_obat($obat_id, $data);
 		redirect('admin/readobat');
     }

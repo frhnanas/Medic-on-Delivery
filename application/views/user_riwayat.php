@@ -43,17 +43,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
+          <!-- <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="<?= site_url('admin/readakun') ?>">Data Akun</a>
+              <a class="nav-link" href="#">Data Akun</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= site_url('admin/readobat') ?>">Data Obat</a>
+              <a class="nav-link" href="#">Data Obat</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="#">Data Transaksi</a>
             </li>
-          </ul>
+          </ul> -->
           <ul class="navbar-nav nav justify-content-end ">
             <li class="nav-item active">
               <a class="nav-link" href="#"> hello, <?= $this->session->userdata('username'); ?> </a>
@@ -68,7 +68,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     <div class="container">
     <div class="box">
-      <h2>Data Transaksi</h2>
+      <h2>Data Transaksi <?= $this->session->userdata('username'); ?></h2>
       <br><br>
       <table class="table table-bordered" id="table">
         <thead>
@@ -78,8 +78,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <th>Pesanan</th>
             <th>Total Harga</th>
             <th>Status</th>
-            <th>Edit</th>
-            <th>Hapus</th>
           </tr>
         </thead>
         <tbody>
@@ -91,8 +89,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <td><?php echo $d->pesanan ?></td>
               <td><?php echo $d->total_harga ?></td>
               <td><?php echo $d->status_transaksi ?></td>
-              <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?php echo $d->transaksi_id ?>"><i class="fas fa-user-edit"></i>Edit</button></td>
-              <td><a type="button" class="btn btn-danger"  href="<?= site_url('admin/deletetransaksi/') . $d->transaksi_id; ?>" onClick="return confirm('Apakah Anda Yakin?')" ><i class="fas fa-user-times"></i>Delete</a></td>
             </form>
           </tr>
           <?php } ?>
@@ -101,7 +97,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </div>
   </div>
 
-<!-- Modal Edit Transaksi -->
+<!-- Modal Edit Obat -->
 <?php $no=1; foreach ($data as $d ) {?>
   <div class="modal fade" id="edit<?php echo $d->transaksi_id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

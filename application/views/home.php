@@ -29,6 +29,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
+          </ul>
+          <ul class="navbar-nav nav justify-content-end ">
             <li class="nav-item active">
               <a class="nav-link" href="<?= site_url('user/go_login') ?>">Login</a>
             </li>

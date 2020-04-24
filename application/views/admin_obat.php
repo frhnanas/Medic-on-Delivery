@@ -92,7 +92,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <td><?php echo $d->jenis ?></td>
               <td><?php echo $d->harga ?></td>
               <td><?php echo $d->status_obat ?></td>
-
               <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?php echo $d->obat_id ?>"><i class="fas fa-user-edit"></i>Edit</button></td>
               <td><a type="button" class="btn btn-danger"  href="<?= site_url('admin/deleteobat/') . $d->obat_id; ?>" onClick="return confirm('Apakah Anda Yakin?')" ><i class="fas fa-user-times"></i>Delete</a></td>
             </form>
@@ -129,8 +128,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <div class="form-group">
             <label>Status Obat</label>
             <select class="form-control" id="formGroupExampleInput4" name="status_obat" required>
-              <option value="tersedia">Tersedia</option>
-              <option value="habis">Habis</option>
+              <option value="Tersedia">Tersedia</option>
+              <option value="Habis">Habis</option>
             </select>            
           </div>
         </div>
@@ -168,8 +167,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="form-group">
             <label for="formGroupExampleInput2">Status</label>
             <select class="form-control" id="formGroupExampleInput4" name="status_obat" required>
-              <option value="tersedia">Tersedia</option>
-              <option value="habis">Habis</option>
+              <option value="Tersedia">Tersedia</option>
+              <option value="Habis">Habis</option>
             </select>            
           </div>
       </div>

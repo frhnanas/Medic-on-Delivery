@@ -37,7 +37,7 @@ class user extends CI_Controller {
                     $this->load->view('user_home');
                 }
             } else {
-                $this->load->view('login', ['error_message' => 'Username or Password isn\'t correct']);
+                $this->load->view('login', ['error_message' => 'Username atau Password salah!']);
             }
         }
     }
@@ -49,19 +49,24 @@ class user extends CI_Controller {
         $alamat = $this->input->post('alamat');
             
         if ($password != $repassword) {
-        return $this->load->view('register', ['error_message' => 'Password and Re Enter Password isn\'t same']);
+        return $this->load->view('register', ['error_message' => 'Password dan Re-Password tidak sama!']);
         }
         
         if ($this->akun->cek_username($username)) {
-        return $this->load->view('register', ['error_message' => 'Username already exist']);
+        return $this->load->view('register', ['error_message' => 'Username telah digunakan!']);
         }
             
-        if (!$this->akun->create_akun(['username' => $username, 'password' => $password, 'alamat' => $alamat, 'role' => 1])) {
-            return $this->load->view('register', ['error_message' => 'Register gagal']);
-        }
-            
+        $input_akun = [
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+			'alamat' => $this->input->post('alamat'),
+			'role' => 1,
+        ];
+        
+		$this->akun->create_akun($input_akun);
         $this->session->set_userdata('username', $username);
         redirect('user/go_login');
-	}
+    }
+
 }
 ?>

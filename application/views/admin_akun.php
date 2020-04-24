@@ -86,7 +86,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <td><?php echo $no++ ?></td>
               <td><?php echo $d->username ?></td>
               <td><?php echo $d->alamat ?></td>
-
               <td><a type="button" class="btn btn-danger"  href="<?= site_url('admin/deleteakun/') . $d->akun_id; ?>" onClick="return confirm('Apakah Anda Yakin?')" ><i class="fas fa-user-times"></i>Delete</a></td>
             </form>
           </tr>
