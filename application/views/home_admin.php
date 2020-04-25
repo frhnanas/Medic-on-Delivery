@@ -35,7 +35,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <a class="nav-link" href="#"> hello, <?= $this->session->userdata('username'); ?> </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="<?= site_url('user') ?>">Logout</a>
+              <a class="nav-link" href="<?= site_url('admin/logout') ?>">Logout</a>
             </li>
           </ul>
         </div>
@@ -43,27 +43,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </header>
     
     <main role="main">
+      <center><h1>Menu Admin </h1></center>
       <div class="container marketing">
         <div class="row">
           <div class="col-lg-4">
-            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Check User Account</h2>
-            <p>aaaaa</p>
-            <p><a class="btn btn-secondary" href="<?= site_url('admin/readakun') ?>">aaaaa &raquo;</a></p>
+            <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
+            <p><a class="btn btn-secondary" href="<?= site_url('admin/readakun') ?>">Cek Data Akun &raquo;</a></p>
           </div>
           <div class="col-lg-4">
-            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Check Medicine List</h2>
-            <p>aaaaa</p>
-            <p><a class="btn btn-secondary" href="<?= site_url('admin/readobat') ?>" role="button">aaaaa &raquo;</a></p>
+          <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
+            <p><a class="btn btn-secondary" href="<?= site_url('admin/readakun') ?>">Cek Data Obat &raquo;</a></p>
           </div>
           <div class="col-lg-4">
-            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Check Transaction List</h2>
-            <p>aaaaa</p>
-            <p><a class="btn btn-secondary" href="<?= site_url('admin/readtransaksi') ?>" role="button">aaaaa &raquo;</a></p>
+          <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
+            <p><a class="btn btn-secondary" href="<?= site_url('admin/readakun') ?>">Cek Data Transaksi &raquo;</a></p>
           </div>
         </div>
+      </div>
 
       <footer class="container">
         <p>&copy; 2020 MoD, inc.</p>

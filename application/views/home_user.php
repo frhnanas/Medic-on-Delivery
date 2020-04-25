@@ -32,16 +32,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
           </ul>
           <ul class="navbar-nav nav justify-content-end ">
             <li class="nav-item active">
-              <a class="nav-link" href="<?= site_url('user/go_login') ?>">Login</a>
+              <a class="nav-link" href="#"> hello, <?= $this->session->userdata('username'); ?> </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="<?= site_url('user/go_register') ?>">Register</a>
+              <a class="nav-link" href="<?= site_url('user/logout') ?>">Logout</a>
             </li>
           </ul>
         </div>
       </nav>
     </header>
-
+    
     <main role="main">
 
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -91,42 +91,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <span class="sr-only">Next</span>
         </a>
 
-        <hr class="featurette-divider">
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">header 1 <span class="text-muted">text header 1</span></h2>
-            <p class="lead">Paragraph 1</p>
-          </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">header 2 <span class="text-muted">text header 2</span></h2>
-            <p class="lead">Paragraph 2</p>
-          </div>
-          <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        <center><h1>Menu User </h1></center>
+        <div class="container marketing">
+          <div class="row">
+            <div class="col-lg-4">
+              <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
+              <p><a class="btn btn-secondary" href="<?= site_url('user/readakun') ?>">Edit Akun &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+              <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
+              <p><a class="btn btn-secondary" href="<?= site_url('user/readbeli') ?>">Beli Obat &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+              <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
+              <p><a class="btn btn-secondary" href="<?= site_url('user/readriwayat') ?>">Riwayat Transaksi &raquo;</a></p>
+            </div>
           </div>
         </div>
 
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">header 3 <span class="text-muted">text header 3</span></h2>
-            <p class="lead">Paragraph 3</p>
-          </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-          </div>
-        </div>
-        
-        <hr class="featurette-divider">
       </div>
 
       <footer class="container">

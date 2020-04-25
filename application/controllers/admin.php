@@ -10,6 +10,16 @@ class admin extends CI_Controller {
         $this->load->model('transaksi');
 	}
     
+    public function home_admin() {
+		$this->load->view('home_admin');
+	}
+
+    public function logout(){
+        $dataLogin = ['username','role'];
+        $this->session->unset_userdata($dataLogin);
+        $this->load->view('home');
+    }
+
     public function readakun(){
         $data['data'] = $this->akun->read_akun()->result();
         $this->load->view('admin_akun', $data);
@@ -66,14 +76,14 @@ class admin extends CI_Controller {
 
     public function updatetransaksi() {
 		$data = [
-            'transaksi_id' => $this->input->post('transaksi_id', true),
-            'nama_pemesan' => $this->input->post('nama_pemesan', true),
-			'pesanan' => $this->input->post('pesanan', true),
-			'total_harga' => $this->input->post('total_harga', true),
-			'status_transaksi' => $this->input->post('status_transaksi', true),
+            'transaksi_id' => $this->input->post('transaksi_id'),
+            'nama_pemesan' => $this->input->post('nama_pemesan'),
+			'pesanan' => $this->input->post('pesanan'),
+			'total_harga' => $this->input->post('total_harga'),
+			'status_transaksi' => $this->input->post('status_transaksi'),
 		];
 
-		$transaksi_id = $this->input->post('transaksi_id', true);
+		$transaksi_id = $this->input->post('transaksi_id');
 		$this->transaksi->update_transaksi($transaksi_id, $data);
 		redirect('admin/readtransaksi');
     }

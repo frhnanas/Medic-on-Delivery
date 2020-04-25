@@ -26,5 +26,9 @@ class akun extends CI_Model{
 		return $this->db->delete('akun', ['akun_id' => $akun_id]);
 	}
 
+	public function read_edit_akun($akun_id) {
+		return $this->db->get_where('akun', ['akun_id' => $akun_id]);
+	}
+
 }
 ?>
