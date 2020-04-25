@@ -4,7 +4,7 @@
 		<link type="text/css" rel="stylesheet" href="<?php echo base_url('template/css/bootstrap.min.css'); ?>"/>
 		<link type="text/css" rel="stylesheet" href="<?php echo base_url('template/css/style.css'); ?>"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Register</title>
+		<title>Medic on Delivery</title>
 	</head>
 	
 	<body>
@@ -23,6 +23,9 @@
 			</div>
 			<div class="form-group">
 				<input type="password" class="form-control" name="re-password" placeholder="Re-Enter Password" required>
+			</div>
+			<div class="form-group">
+				<input type="number" class="form-control" name="no_hp" placeholder="No HP" required>
 			</div>
 			<div class="form-group">
 				<textarea class="form-control" name="alamat" placeholder="Alamat" cols="60" rows="5" required></textarea>

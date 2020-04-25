@@ -47,16 +47,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <div class="container marketing">
         <div class="row">
           <div class="col-lg-4">
-            <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded-circle" src="<?= base_url() ?>template/images/account.png" alt="Generic placeholder image" width="140" height="140">
             <p><a class="btn btn-secondary" href="<?= site_url('admin/readakun') ?>">Cek Data Akun &raquo;</a></p>
           </div>
           <div class="col-lg-4">
-          <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
-            <p><a class="btn btn-secondary" href="<?= site_url('admin/readakun') ?>">Cek Data Obat &raquo;</a></p>
+          <img class="rounded-circle" src="<?= base_url() ?>template/images/medicine.png" alt="Generic placeholder image" width="140" height="140">
+            <p><a class="btn btn-secondary" href="<?= site_url('admin/readobat') ?>">Cek Data Obat &raquo;</a></p>
           </div>
           <div class="col-lg-4">
-          <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
-            <p><a class="btn btn-secondary" href="<?= site_url('admin/readakun') ?>">Cek Data Transaksi &raquo;</a></p>
+          <img class="rounded-circle" src="<?= base_url() ?>template/images/transaction.png" alt="Generic placeholder image" width="140" height="140">
+            <p><a class="btn btn-secondary" href="<?= site_url('admin/readtransaksi') ?>">Cek Data Transaksi &raquo;</a></p>
           </div>
         </div>
       </div>

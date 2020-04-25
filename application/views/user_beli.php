@@ -14,6 +14,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <link rel="icon" href="<?= base_url() ?>template/images/icon_top.png">
   <title>Medic on Delivery</title>
   <link href="<?= base_url() ?>template/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="<?php echo base_url('template/css/bootstrap.min.css'); ?>"/>
+  <link type="text/css" rel="stylesheet" href="<?php echo base_url('template/css/style.css'); ?>"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -68,6 +70,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
       </nav>
     </header>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        <h2>Beli Obat</h2>
+        <div class="form-group">
+            <label>Nama Obat</label>
+            <select class="form-control" id="formGroupExampleInput" name="nama_obat" required>
+                <?php $no=1; foreach ($data as $d ): ?>  
+                <option value="<?php echo $d->nama_obat ?>"><?php echo $d->nama_obat ?></option>
+                <?php endforeach; ?>
+            </select>            
+        </div>
+		<div class="form-group">
+			<input type="text" class="form-control" name="jumlah" placeholder="Jumlah" required>
+        </div>
+        <a href="<?= site_url('user/home_user') ?>" style="margin-right:20px">Batal</a>
+		<button type="submit" class="btn btn-primary">Beli</button>
+	</form>
 
 </body>
   <script type="text/javascript">

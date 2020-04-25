@@ -18,6 +18,10 @@ class transaksi extends CI_Model{
 		return $this->db->delete('transaksi', ['transaksi_id' => $transaksi_id]);
 	}
 
+	public function delete_transaksi_akun($akun_id) {
+		return $this->db->delete('transaksi', ['akun_id' => $akun_id]);
+	}
+
     public function read_riwayat($akun_id) {
 		return $this->db->get_where('transaksi', ['akun_id' => $akun_id]);
 	}

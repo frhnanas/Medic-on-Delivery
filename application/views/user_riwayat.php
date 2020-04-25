@@ -45,7 +45,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="<?= site_url('user/user_home') ?>">Home</a>
+              <a class="nav-link" href="<?= site_url('user/home_user') ?>">Home</a>
             </li> 
             <li class="nav-item">
               <a class="nav-link" href="<?= site_url('user/readakun') ?>">Edit Akun</a>
@@ -79,6 +79,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <th>No</th>
             <th>Nama Pemesan</th>
             <th>Pesanan</th>
+            <th>Jumlah</th>
             <th>Total Harga</th>
             <th>Status</th>
           </tr>
@@ -88,8 +89,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <tr>
             <form action="">
               <td><?php echo $no++ ?></td>
-              <td><?php echo $d->nama_pemesan ?></td>
-              <td><?php echo $d->pesanan ?></td>
+              <td>-</td>
+              <td>-</td>
+              <td><?php echo $d->jumlah ?></td>
               <td><?php echo $d->total_harga ?></td>
               <td><?php echo $d->status_transaksi ?></td>
             </form>

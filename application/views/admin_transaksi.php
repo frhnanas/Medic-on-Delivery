@@ -79,6 +79,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <th>No</th>
             <th>Nama Pemesan</th>
             <th>Pesanan</th>
+            <th>Jumlah</th>
             <th>Total Harga</th>
             <th>Status</th>
             <th>Edit</th>
@@ -90,8 +91,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <tr>
             <form action="">
               <td><?php echo $no++ ?></td>
-              <td><?php echo $d->nama_pemesan ?></td>
-              <td><?php echo $d->pesanan ?></td>
+              <td>-</td>
+              <td>-</td>
+              <td><?php echo $d->jumlah ?></td>
               <td><?php echo $d->total_harga ?></td>
               <td><?php echo $d->status_transaksi ?></td>
               <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?php echo $d->transaksi_id ?>"><i class="fas fa-user-edit"></i>Edit</button></td>
@@ -116,22 +118,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <form method="post" action= "<?= site_url('admin/updatetransaksi'); ?>">
         <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="Transaksi ID" name="transaksi_id" value="<?php echo $d->transaksi_id ?>"  required>
           <div class="form-group">
-            <label for="formGroupExampleInput">Nama Pesanan</label>
-            <input type="text" class="form-control" id="formGroupExampleInput1" placeholder="Nama Pesanan" name="nama_pesanan"  value="<?php echo $d->nama_pesanan ?>" required>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput2">Jenis</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Pesanan" name="pesanan" value="<?php echo $d->pesanan ?>" required>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput3">Harga</label>
-            <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Total Harga" name="total_harga" value="<?php echo $d->total_harga ?>" required>
-          </div>
-          <div class="form-group">
             <label>Status Transaksi</label>
             <select class="form-control" id="formGroupExampleInput4" name="status_transaksi" required>
-              <option value="sudah bayar">Sudah Bayar</option>
-              <option value="belum bayar">Belum Bayar</option>
+              <option value="Belum Bayar">Belum Bayar</option>
+              <option value="Sudah Bayar">Sudah Bayar</option>
             </select>            
           </div>
         </div>

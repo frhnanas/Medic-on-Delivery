@@ -4,7 +4,7 @@
 		<link type="text/css" rel="stylesheet" href="<?php echo base_url('template/css/bootstrap.min.css'); ?>"/>
 		<link type="text/css" rel="stylesheet" href="<?php echo base_url('template/css/style.css'); ?>"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Login</title>
+		<title>Medic on Delivery</title>
 	</head>
 	
 	<body>

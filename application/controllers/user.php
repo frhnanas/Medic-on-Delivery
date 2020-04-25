@@ -58,6 +58,7 @@ class user extends CI_Controller {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         $repassword = $this->input->post('re-password');
+        $no_hp = $this->input->post('no_hp');
         $alamat = $this->input->post('alamat');
             
         if ($password != $repassword) {
@@ -70,7 +71,8 @@ class user extends CI_Controller {
             
         $input_akun = [
 			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password'),
+            'password' => $this->input->post('password'),
+            'no_hp' => $this->input->post('no_hp'),
 			'alamat' => $this->input->post('alamat'),
 			'role' => 1,
         ];
@@ -108,8 +110,8 @@ class user extends CI_Controller {
     }
 
     public function readbeli(){
-        // $data['data'] = $this->obat->read_beli($this->session->userdata('akun_id'))->result();
-        $this->load->view('user_beli');
+        $data['data'] = $this->obat->read_obat()->result();
+        $this->load->view('user_beli', $data);
     }
 
 

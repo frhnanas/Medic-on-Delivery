@@ -44,7 +44,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     
     <main role="main">
 
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -89,27 +89,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
-        </a>
+        </a> -->
 
         <center><h1>Menu User </h1></center>
         <div class="container marketing">
           <div class="row">
             <div class="col-lg-4">
-              <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
+              <img class="rounded-circle" src="<?= base_url() ?>template/images/account.png" alt="Generic placeholder image" width="140" height="140">
               <p><a class="btn btn-secondary" href="<?= site_url('user/readakun') ?>">Edit Akun &raquo;</a></p>
             </div>
             <div class="col-lg-4">
-              <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
+              <img class="rounded-circle" src="<?= base_url() ?>template/images/medicine.png" alt="Generic placeholder image" width="140" height="140">
               <p><a class="btn btn-secondary" href="<?= site_url('user/readbeli') ?>">Beli Obat &raquo;</a></p>
             </div>
             <div class="col-lg-4">
-              <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
+              <img class="rounded-circle" src="<?= base_url() ?>template/images/transaction.png" alt="Generic placeholder image" width="140" height="140">
               <p><a class="btn btn-secondary" href="<?= site_url('user/readriwayat') ?>">Riwayat Transaksi &raquo;</a></p>
             </div>
           </div>
         </div>
 
-      </div>
+      <!-- </div> -->
 
       <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>

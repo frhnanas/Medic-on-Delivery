@@ -52,32 +52,32 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="first-slide" src="" alt="First slide">
+            <img class="first-slide" src="<?= base_url() ?>template/images/carousel1.jpg" alt="First slide">
             <div class="container">
               <div class="carousel-caption text-left">
-                <h1>Carousel 1</h1>
-                <p>Description 1</p>
-                <p><a class="btn btn-lg btn-primary" href="<?= site_url('user/go_login') ?>" role="button">Button 1</a></p>
+                <h1>Ingin Membeli Obat?</h1>
+                <p>Klik tombol dibawah untuk melakukan login.</p>
+                <p><a class="btn btn-lg btn-primary" href="<?= site_url('user/go_login') ?>" role="button">Login</a></p>
               </div>
             </div>
           </div>
           <div class="carousel-item">
-            <img class="second-slide" src="" alt="Second slide">
+            <img class="second-slide" src="<?= base_url() ?>template/images/carousel2.jpg" alt="Second slide">
             <div class="container">
               <div class="carousel-caption">
-                <h1>Carousel 2</h1>
-                <p>Description 2</p>
-                <p><a class="btn btn-lg btn-primary" href="<?= site_url('user/go_login') ?>" role="button">Button 2</a></p>
+                <h1>Belum Memiliki Akun?</h1>
+                <p>Klik tombol dibawah untuk melakukan pendaftaran akun.</p>
+                <p><a class="btn btn-lg btn-primary" href="<?= site_url('user/go_register') ?>" role="button">Register</a></p>
               </div>
             </div>
           </div>
           <div class="carousel-item">
-            <img class="third-slide" src="" alt="Third slide">
+            <img class="third-slide" src="<?= base_url() ?>template/images/carousel3.jpg" alt="Third slide">
             <div class="container">
               <div class="carousel-caption text-right">
-                <h1>Carousel 3</h1>
-                <p>Description 3</p>
-                <p><a class="btn btn-lg btn-primary" href="<?= site_url('user/go_login') ?>" role="button">Button 3</a></p>
+                <h1>COVID-19 Update</h1>
+                <p>Coronavirus COVID-19 sudah mempengaruhi 210 negara di seluruh dunia.</p>
+                <p><a class="btn btn-lg btn-primary" href="https://www.worldometers.info/coronavirus/" role="button">More</a></p>
               </div>
             </div>
           </div>

@@ -26,6 +26,7 @@ class admin extends CI_Controller {
     }
 
     public function deleteakun($akun_id) {
+        $this->transaksi->delete_transaksi_akun($akun_id);
 		$this->akun->delete_akun($akun_id);
 		redirect('admin/readakun');
 	}
@@ -76,10 +77,6 @@ class admin extends CI_Controller {
 
     public function updatetransaksi() {
 		$data = [
-            'transaksi_id' => $this->input->post('transaksi_id'),
-            'nama_pemesan' => $this->input->post('nama_pemesan'),
-			'pesanan' => $this->input->post('pesanan'),
-			'total_harga' => $this->input->post('total_harga'),
 			'status_transaksi' => $this->input->post('status_transaksi'),
 		];
 
