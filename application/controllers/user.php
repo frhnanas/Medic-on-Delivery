@@ -121,11 +121,12 @@ class user extends CI_Controller {
     }
 
     public function createtransaksi() {
-		$input_transaksi = [
+        $harga = $this->obat->get_harga($this->input->post('obat_id'));
+        $input_transaksi = [
             'akun_id' => $this->input->post('akun_id'),
             'obat_id' => $this->input->post('obat_id'),
 			'jumlah' => $this->input->post('jumlah'),
-			'total_harga' => 123,
+			'total_harga' => $this->input->post('jumlah') * $harga,
 			'status_transaksi' => 'Belum Bayar'
         ];
         

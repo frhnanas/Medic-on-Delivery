@@ -30,5 +30,10 @@ class obat extends CI_Model{
 		return $this->db->get_where('obat', ['obat_id' => $obat_id]);
 	}
 
+	public function get_harga($obat_id){
+    	$this->db->where('obat_id', $obat_id);
+    	return $this->db->get('obat')->row('harga');
+  	}
+
 }
 ?>
