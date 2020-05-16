@@ -94,11 +94,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <hr class="featurette-divider">
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">header 1 <span class="text-muted">text header 1</span></h2>
-            <p class="lead">Paragraph 1</p>
+            <h2 class="featurette-heading">Tidak ada biaya pengiriman!</h2>
+            <p class="lead">Takut Ongkos Pengiriman mahal? Tenang saja! Pada Medic on Delivery tidak ada ongkir!</p>
           </div>
           <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+            <img class="featurette-image img-fluid mx-auto" src="<?= base_url() ?>template/images/free_delivery.png" alt="Generic placeholder image" width="400">
           </div>
         </div>
 
@@ -106,11 +106,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">header 2 <span class="text-muted">text header 2</span></h2>
-            <p class="lead">Paragraph 2</p>
+            <h2 class="featurette-heading">Stok Obat Terjamin Ada!</h2>
+            <p class="lead">Jangan Khawatir dengan stok obat di Medic on Delivery, karena stok obat kami sangat banyak! </p>
           </div>
           <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+            <img class="featurette-image img-fluid mx-auto" src="<?= base_url() ?>template/images/ready_stock.jpg" alt="Generic placeholder image" width="400">
           </div>
         </div>
 
@@ -118,11 +118,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">header 3 <span class="text-muted">text header 3</span></h2>
-            <p class="lead">Paragraph 3</p>
+            <h2 class="featurette-heading">Respon Relatif Cepat!</h2>
+            <p class="lead">Takut Pengiriman lama? Jangan Khawatir! setelah anda memesan obat kami langsung mengirimkan obatnya sesuai tujuan!</p>
           </div>
           <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+            <img class="featurette-image img-fluid mx-auto" src="<?= base_url() ?>template/images/fast_response.png" alt="Generic placeholder image" width="400">
           </div>
         </div>
         

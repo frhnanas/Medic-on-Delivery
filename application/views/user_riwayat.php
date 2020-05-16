@@ -89,8 +89,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <tr>
             <form action="">
               <td><?php echo $no++ ?></td>
-              <td>-</td>
-              <td>-</td>
+              <td></td>
+              <td></td>
               <td><?php echo $d->jumlah ?></td>
               <td><?php echo $d->total_harga ?></td>
               <td><?php echo $d->status_transaksi ?></td>

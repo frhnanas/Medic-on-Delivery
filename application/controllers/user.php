@@ -35,7 +35,7 @@ class user extends CI_Controller {
 	public function login(){
         if ($this->input->method() == 'post') {
             $data = ['username' => $this->input->post('username'), 'password' => $this->input->post('password')];
-            if ($this->akun->login($data)) {
+            if ($this->akun->login($data)->num_rows() > 0) {
                 $akun = $this->akun->login($data)->row_array();
                 $cek = array(
                     'akun_id' => $akun['akun_id'],
@@ -91,13 +91,12 @@ class user extends CI_Controller {
             'role' => 1
 		];
 
-        $akun_id = $this->input->post('akun_id');
-        $username = $this->input->post('username');
+        $akun_id = $this->input->post('akun_id');   
         $password = $this->input->post('password');
         $repassword = $this->input->post('re-password');
 
         if ($password != $repassword) {
-            return $this->load->view('user_akun', ['error_message' => 'Password dan Re-Password tidak sama!']);
+            return $this->load->view('home_user', ['error_message' => 'Password dan Re-Password tidak sama, edit akun gagal!']);
         }
 
 		$this->akun->update_akun($akun_id, $data);
@@ -110,7 +109,8 @@ class user extends CI_Controller {
     }
 
     public function readbeli(){
-        $data['data'] = $this->obat->read_obat()->result();
+        $status_obat = 'tersedia';
+        $data['data'] = $this->obat->read_beli($status_obat)->result();
         $this->load->view('user_beli', $data);
     }
 
@@ -119,6 +119,19 @@ class user extends CI_Controller {
         $data['data'] = $this->transaksi->read_riwayat($this->session->userdata('akun_id'))->result();
         $this->load->view('user_riwayat', $data);
     }
+
+    public function createtransaksi() {
+		$input_transaksi = [
+            'akun_id' => $this->input->post('akun_id'),
+            'obat_id' => $this->input->post('obat_id'),
+			'jumlah' => $this->input->post('jumlah'),
+			'total_harga' => 123,
+			'status_transaksi' => 'Belum Bayar'
+        ];
+        
+		$this->transaksi->create_transaksi($input_transaksi);
+		redirect('user/home_user');
+	}
 
 }
 ?>

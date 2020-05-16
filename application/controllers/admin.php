@@ -65,6 +65,7 @@ class admin extends CI_Controller {
     }
 
 	public function deleteobat($obat_id) {
+        $this->transaksi->delete_transaksi_obat($obat_id);
 		$this->obat->delete_obat($obat_id);
 		redirect('admin/readobat');
 	}

@@ -22,8 +22,12 @@ class obat extends CI_Model{
 		return $this->db->get_where('obat', ['nama_obat' => $nama_obat])->num_rows() > 0;
 	}
 
-	public function read_beli() {
-		return $this->db->get('obat');
+	public function read_beli($status_obat) {
+		return $this->db->get_where('obat', ['status_obat' => $status_obat]);
+	}
+
+	public function get_obat($obat_id) {
+		return $this->db->get_where('obat', ['obat_id' => $obat_id]);
 	}
 
 }

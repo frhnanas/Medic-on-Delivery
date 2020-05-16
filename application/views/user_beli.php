@@ -71,27 +71,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
       </nav>
     </header>
 
-    <form action="" method="POST" enctype="multipart/form-data">
-        <h2>Beli Obat</h2>
+    <form action="<?= site_url('user/createtransaksi'); ?>" method="POST" enctype="multipart/form-data">
+        <h2>Beli Obat</h2> 
+        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="Akun ID" name="akun_id" value="<?= $this->session->userdata('akun_id'); ?>"  required>
         <div class="form-group">
             <label>Nama Obat</label>
-            <select class="form-control" id="formGroupExampleInput" name="nama_obat" required>
+            <select class="form-control" id="formGroupExampleInput" name="obat_id" required>
                 <?php $no=1; foreach ($data as $d ): ?>  
-                <option value="<?php echo $d->nama_obat ?>"><?php echo $d->nama_obat ?></option>
+                <option value="<?php echo $d->obat_id ?>"><?php echo $d->nama_obat ?></option>
                 <?php endforeach; ?>
             </select>            
         </div>
 		<div class="form-group">
 			<input type="text" class="form-control" name="jumlah" placeholder="Jumlah" required>
-        </div>
+          </div>
         <a href="<?= site_url('user/home_user') ?>" style="margin-right:20px">Batal</a>
 		<button type="submit" class="btn btn-primary">Beli</button>
 	</form>
 
 </body>
-  <script type="text/javascript">
-    $(document).ready( function () {
-        $('#table').DataTable();
-    } );
-  </script>
 </html>

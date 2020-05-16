@@ -14,6 +14,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <link rel="icon" href="<?= base_url() ?>template/images/icon_top.png">
   <title>Medic on Delivery</title>
   <link href="<?= base_url() ?>template/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="<?php echo base_url('template/css/bootstrap.min.css'); ?>"/>
+  <link type="text/css" rel="stylesheet" href="<?php echo base_url('template/css/style.css'); ?>"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -69,75 +71,32 @@ defined('BASEPATH') or exit('No direct script access allowed');
       </nav>
     </header>
 
-<div class="container">
-    <div class="box">
-      <h2>Data Akun <?= $this->session->userdata('username'); ?></h2>
-      <br><br>
-      <table class="table table-bordered" id="table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Username</th>
-			<th>Password</th>
-			<th>Alamat</th>
-            <th>Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php $no=1; foreach ($data as $d ) {?>
-          <tr>
-            <form action="">
-              <td><?php echo $no++ ?></td>
-			  <td><?php echo $d->username ?></td>
-			  <td><?php echo $d->password ?></td>
-              <td><?php echo $d->alamat ?></td>
-              <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?php echo $d->akun_id ?>"><i class="fas fa-user-edit"></i>Edit</button></td>
-            </form>
-          </tr>
-          <?php } ?>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-<!-- Modal Edit Akun -->
-<?php $no=1; foreach ($data as $d ) {?>
-  <div class="modal fade" id="edit<?php echo $d->akun_id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-        <center><h2>Edit Data Akun </h2></center>
-        </div>
-        <div class="modal-body">
-        <form method="post" action= "<?= site_url('user/updateakun'); ?>">
-        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="Akun ID" name="akun_id" value="<?php echo $d->akun_id ?>"  required>
+    <form action="<?= site_url('user/updateakun'); ?>" method="POST" enctype="multipart/form-data">
+        <h2>Update Data Akun</h2>
+        <?php $no=1; foreach ($data as $d ): ?>  
+        <div class="form-group">
+          <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="Akun ID" name="akun_id" value="<?php echo $d->akun_id ?>"  required>
           <div class="form-group">
             <label for="formGroupExampleInput">Username</label>
-            <input type="text" class="form-control" id="formGroupExampleInput1" placeholder="Nama Obat" name="username"  value="<?php echo $d->username ?>" required>
+            <input type="text" class="form-control" id="formGroupExampleInput1" placeholder="Username " name="username"  value="<?php echo $d->username ?>" required>
           </div>
           <div class="form-group">
             <label for="formGroupExampleInput2">Password</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Password" name="password" value="<?php echo $d->password ?>" required>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Password" name="password" required>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Re-Password</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Re-Password" name="re-password" required>
           </div>
           <div class="form-group">
             <label for="formGroupExampleInput3">Alamat</label>
             <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Alamat" name="alamat" value="<?php echo $d->alamat ?>" required>
-          </div>
+          </div>            
         </div>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-        <input  type="submit" class="btn btn-primary" id="hapus" value="Submit" placeholder="Simpan">
-        </div>
-        </form>
-      </div>
-    </div>
-  </div>
-<?php } ?>
+        <?php endforeach; ?>
+        <a href="<?= site_url('user/home_user') ?>" style="margin-right:20px">Batal</a>
+		<button type="submit" class="btn btn-primary">Ubah</button>
+	</form>
 
 </body>
-  <script type="text/javascript">
-    $(document).ready( function () {
-        $('#table').DataTable();
-    } );
-  </script>
 </html>
